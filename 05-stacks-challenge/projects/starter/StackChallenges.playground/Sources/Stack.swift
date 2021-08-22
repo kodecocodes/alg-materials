@@ -29,8 +29,8 @@ public struct Stack<Element> {
   }
 }
 
-extension Stack: CustomStringConvertible {
-  public var description: String {
+extension Stack: CustomDebugStringConvertible {
+  public var debugDescription: String {
     """
     ----top----
     \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))
