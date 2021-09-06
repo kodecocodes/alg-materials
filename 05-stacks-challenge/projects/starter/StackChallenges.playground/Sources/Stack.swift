@@ -1,4 +1,4 @@
-// Copyright (c) 2019 Razeware LLC
+// Copyright (c) 2021 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
 public struct Stack<Element> {
@@ -29,8 +29,8 @@ public struct Stack<Element> {
   }
 }
 
-extension Stack: CustomStringConvertible {
-  public var description: String {
+extension Stack: CustomDebugStringConvertible {
+  public var debugDescription: String {
     """
     ----top----
     \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))
