@@ -1,6 +1,8 @@
 // Copyright (c) 2021 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
+import Foundation
+
 public struct Stack<Element> {
     private var storage: [Element] = []
     
@@ -26,6 +28,36 @@ public struct Stack<Element> {
     public var isEmpty: Bool {
         peek() == nil
     }
+}
+
+func reverseArray<Element>(_ array: [Element]) -> [Element] {
+    var newArr: [Element] = []
+    var stack = Stack(array)
+    for _ in array {
+        newArr.append(stack.pop()!)
+    }
+    return newArr
+}
+
+func isBalanced(string: String) -> Bool {
+    var opening = 0
+    var closing = 0
+    var stack = Stack<Character>()
+    for char in string {
+        stack.push(char)
+    }
+    
+    while let char = stack.pop() {
+        if char == "(" {
+            opening += 1
+        }
+        if char == ")" {
+            closing += 1
+        }
+    }
+    
+    return opening == closing
+    
 }
 
 extension Stack: CustomStringConvertible {
@@ -73,4 +105,19 @@ example(of: "initializing a stack from an array") {
 example(of: "initializing a stack from array literal") {
     let stack: Stack = [1.0, 2.0, 3.0, 4.0]
     print(stack)
+}
+
+example(of: "reversing an array using stack") {
+    let arr = [1, 2, 3, 4]
+    let result = reverseArray(arr)
+    
+    print(result)
+}
+
+example(of: "balance the parentheses") {
+    let string1 = "h((e))llo(world)()"
+    let string2 = "(hello world"
+    
+    print(isBalanced(string: string1))
+    print(isBalanced(string: string2))
 }
