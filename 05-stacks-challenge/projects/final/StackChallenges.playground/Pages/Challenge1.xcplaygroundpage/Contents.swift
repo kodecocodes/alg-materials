@@ -3,7 +3,7 @@
 /*:
  # Stack Challenges
  
- ## #1. Reserve an Array
+ ## #1. Reverse an Array
  
  Create a function that prints the contents of an array in reversed order.
  */
