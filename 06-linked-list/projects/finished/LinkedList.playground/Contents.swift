@@ -129,4 +129,8 @@ example(of: "linked list cow") {
     list2.remove(after: node)
   }
   print("List2: \(list2)")
+    
+    print("Append node on list2")
+    list2.append(4)
+    print("List2: \(list2)")
 }

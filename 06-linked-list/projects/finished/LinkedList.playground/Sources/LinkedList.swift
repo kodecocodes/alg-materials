@@ -135,6 +135,7 @@ public struct LinkedList<Value> {
       newNode = newNode!.next
       oldNode = nextOldNode
     }
+      tail = newNode
     
     return nodeCopy
   }
