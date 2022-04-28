@@ -41,8 +41,8 @@ public struct LinkedList<Value> {
   }
   
   @discardableResult
-  public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
-    copyNodes()
+  public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value>? {
+    guard let node = copyNodes(returningCopyOf: node) else { return nil }
     guard tail !== node else {
       append(value)
       return tail!
