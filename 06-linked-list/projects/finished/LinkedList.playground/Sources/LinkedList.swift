@@ -41,8 +41,8 @@ public struct LinkedList<Value> {
   }
   
   @discardableResult
-  public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
-    copyNodes()
+  public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value>? {
+    guard let node = copyNodes(returningCopyOf: node) else { return nil }
     guard tail !== node else {
       append(value)
       return tail!
@@ -117,7 +117,7 @@ public struct LinkedList<Value> {
   
   private mutating func copyNodes(returningCopyOf node: Node<Value>?) -> Node<Value>? {
     guard !isKnownUniquelyReferenced(&head) else {
-      return nil
+      return node
     }
     guard var oldNode = head else {
       return nil
@@ -135,6 +135,7 @@ public struct LinkedList<Value> {
       newNode = newNode!.next
       oldNode = nextOldNode
     }
+      tail = newNode
     
     return nodeCopy
   }

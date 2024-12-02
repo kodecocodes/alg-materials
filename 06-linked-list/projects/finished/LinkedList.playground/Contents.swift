@@ -38,7 +38,7 @@ example(of: "inserting at a particular index") {
   print("Before inserting: \(list)")
   var middleNode = list.node(at: 1)!
   for _ in 1...4 {
-    middleNode = list.insert(-1, after: middleNode)
+    middleNode = list.insert(-1, after: middleNode) ?? Node(value: 0)
   }
   print("After inserting: \(list)")
 }
@@ -129,4 +129,20 @@ example(of: "linked list cow") {
     list2.remove(after: node)
   }
   print("List2: \(list2)")
+    
+    print("Append node on list2")
+    list2.append(4)
+    print("List2: \(list2)")
+
+    print("Insert node on list2")
+    if let node2 = list2.node(at: 0) {
+      list2.insert(5, after: node2)
+    }
+    print("List2: \(list2)")
+
+    print("Removing middle node on list2")
+    if let node3 = list2.node(at: 1) {
+      list2.remove(after: node3)
+    }
+    print("List2: \(list2)")
 }
