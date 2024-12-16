@@ -44,3 +44,5 @@ extension Stack: ExpressibleByArrayLiteral {
     storage = elements
   }
 }
+
+extension Stack: Sendable where Element: Sendable {}
