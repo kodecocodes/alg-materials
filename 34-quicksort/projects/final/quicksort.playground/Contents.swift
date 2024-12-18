@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Razeware LLC
+// Copyright (c) 2025 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
 var list = [12, 0, 3, 9, 2, 21, 18, 27, 1, 5, 8, -1, 8]
