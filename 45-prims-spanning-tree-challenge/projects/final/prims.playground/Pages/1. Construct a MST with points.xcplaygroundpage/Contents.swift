@@ -12,13 +12,6 @@
 
 import UIKit
 
-extension CGPoint: Hashable {
-  public func hash(into hasher: inout Hasher) {
-    hasher.combine(x)
-    hasher.combine(y)
-  }
-}
-
 extension CGPoint {
   func distanceSquared(to point: CGPoint) -> CGFloat {
     let xDistance = (x - point.x)

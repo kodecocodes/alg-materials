@@ -12,3 +12,5 @@ public struct Person: Equatable {
   let age: Int
   let isMilitary: Bool
 }
+
+//: [Next Challenge](@next)

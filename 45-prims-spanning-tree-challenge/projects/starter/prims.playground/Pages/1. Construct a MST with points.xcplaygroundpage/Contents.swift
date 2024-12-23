@@ -12,13 +12,6 @@
 
 import UIKit
 
-extension CGPoint: Hashable {
-  public func hash(into hasher: inout Hasher) {
-    hasher.combine(x)
-    hasher.combine(y)
-  }
-}
-
 extension Prim where T == CGPoint {
   
   public func produceMinimumSpanningTree(with points: [CGPoint]) -> (cost: Double, mst: Graph) {
