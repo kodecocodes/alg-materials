@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Razeware LLC
+// Copyright (c) 2025 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 /*:
  [Previous Challenge](@previous)
@@ -24,14 +24,14 @@ bst2.insert(1)
 bst2.insert(0)
 bst2.insert(4)
 
-extension BinarySearchTree: Equatable {
+extension BinarySearchTree: @retroactive Equatable where Element: Equatable {
   
   public static func ==(lhs: BinarySearchTree, rhs: BinarySearchTree) -> Bool {
     isEqual(lhs.root, rhs.root)
   }
   
-  private static func isEqual<Element: Equatable>(_ node1: BinaryNode<Element>?,
-                                                  _ node2: BinaryNode<Element>?) -> Bool {
+  private static func isEqual(_ node1: BinaryNode<Element>?,
+                              _ node2: BinaryNode<Element>?) -> Bool {
     guard let leftNode = node1, let rightNode = node2 else {
       return node1 == nil && node2 == nil
     }

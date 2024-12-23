@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Razeware LLC
+// Copyright (c) 2025 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
 public class BinaryNode<Element> {
@@ -22,7 +22,7 @@ extension BinaryNode: CustomStringConvertible {
                        _ top: String = "",
                        _ root: String = "",
                        _ bottom: String = "") -> String {
-    guard let node = node else {
+    guard let node else {
       return root + "nil\n"
     }
     if node.leftChild == nil && node.rightChild == nil {

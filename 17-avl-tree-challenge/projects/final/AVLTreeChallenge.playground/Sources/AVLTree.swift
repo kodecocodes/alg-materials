@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Razeware LLC
+// Copyright (c) 2025 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
 public struct AVLTree<Element: Comparable> {
@@ -11,7 +11,7 @@ public struct AVLTree<Element: Comparable> {
 extension AVLTree: CustomStringConvertible {
   
   public var description: String {
-    guard let root = root else { return "empty tree" }
+    guard let root else { return "empty tree" }
     return String(describing: root)
   }
 }
@@ -23,7 +23,7 @@ extension AVLTree {
   }
   
   private func insert(from node: AVLNode<Element>?, value: Element) -> AVLNode<Element> {
-    guard let node = node else {
+    guard let node else {
       return AVLNode(value: value)
     }
     if value < node.value {
@@ -122,7 +122,7 @@ extension AVLTree {
   }
   
   private func remove(node: AVLNode<Element>?, value: Element) -> AVLNode<Element>? {
-    guard let node = node else {
+    guard let node else {
       return nil
     }
     if value == node.value {

@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Razeware LLC
+// Copyright (c) 2025 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
 public struct BinarySearchTree<Element: Comparable> {
@@ -11,7 +11,7 @@ public struct BinarySearchTree<Element: Comparable> {
 extension BinarySearchTree: CustomStringConvertible {
   
   public var description: String {
-    guard let root = root else { return "empty tree" }
+    guard let root else { return "empty tree" }
     return String(describing: root)
   }
 }
@@ -23,7 +23,7 @@ extension BinarySearchTree {
   }
   
   private func insert(from node: BinaryNode<Element>?, value: Element) -> BinaryNode<Element> {
-    guard let node = node else {
+    guard let node else {
       return BinaryNode(value: value)
     }
     if value < node.value {
@@ -67,7 +67,7 @@ extension BinarySearchTree {
   }
   
   private func remove(node: BinaryNode<Element>?, value: Element) -> BinaryNode<Element>? {
-    guard let node = node else {
+    guard let node else {
       return nil
     }
     if value == node.value {
