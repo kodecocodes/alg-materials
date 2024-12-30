@@ -29,3 +29,14 @@ example(of: "initializing a stack from an array") {
   stack.pop()
 }
 
+example(of: "sendability") { @MainActor in // 1.
+  // 2.
+  let task = Task.detached {
+    return Stack([1])
+  }
+  // 3.
+  Task.detached {
+    let value = await task.value
+    print(value)
+  }
+}
